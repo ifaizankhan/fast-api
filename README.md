@@ -30,19 +30,19 @@ uvicorn app:app --reload --port 8083
 
 ### Instructions for Testing
 
-1. **Health Check**: Ensures the API is running.
+1. Health Check: Ensures the API is running.
     ```sh
     curl -X GET http://127.0.0.1:8083/api/health
     ```
-2. **Authenticate User**: Verifies user credentials.
+2. Authenticate User: Verifies user credentials.
     ```sh
     curl -v -u alice:wonderland -X POST http://127.0.0.1:8083/api/auth
     ```
-3. **Get Questions**: Retrieves a specified number of questions.
+3. Get Questions: Retrieves a specified number of questions.
     ```sh
     curl -v -u alice:wonderland -X GET "http://127.0.0.1:8083/api/questions?use=Test%20de%20positionnement&subject=BDD&num_questions=2"
     ```
-4. **Add a Question**: Allows an admin user to add a new question.
+4. Add a Question: Allows an admin user to add a new question.
     ```sh
     curl -u admin:4dm1N -H "Content-Type: application/json" -X POST -d '{
         "question": "New question?",
